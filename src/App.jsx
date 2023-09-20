@@ -9,10 +9,15 @@ import {
 } from "react-router-dom";
 
 // Layouts
-import { RootLayout } from "./layouts/RootLayout";
+import { RootLayout } from "./pageLayouts/RootLayout";
+import { CarsLayout } from "./pageLayouts/CarsLayout";
 
 const router = createBrowserRouter(
-  createRoutesFromElements(<Route path="/" element={<RootLayout />}></Route>)
+  createRoutesFromElements(
+    <Route path="/" element={<RootLayout />}>
+      <Route path="cars" element={<CarsLayout />}></Route>
+    </Route>
+  )
 );
 
 const App = () => {
