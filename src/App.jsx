@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { v4 as uuid } from "uuid";
 import "./App.css";
 import "../src/styles/reset.css";
 import {
@@ -12,15 +13,20 @@ import {
 import { RootLayout } from "./pageLayouts/RootLayout";
 import { CarsLayout } from "./pageLayouts/CarsLayout";
 
-const router = createBrowserRouter(
-  createRoutesFromElements(
-    <Route path="/" element={<RootLayout />}>
-      <Route path="cars" element={<CarsLayout />}></Route>
-    </Route>
-  )
-);
+// states variable imports
+import { carDataArray } from "./pages/cars/carData";
 
 const App = () => {
+  const [carData, setCarData] = useState(carDataArray);
+
+  const router = createBrowserRouter(
+    createRoutesFromElements(
+      <Route path="/" element={<RootLayout />}>
+        <Route path="cars" element={<CarsLayout carData={carData} />}></Route>
+      </Route>
+    )
+  );
+
   return <RouterProvider router={router} />;
 };
 

@@ -1,0 +1,27 @@
+.card {
+  max-width: 30vw;
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+  /* align-items to get the text to be at the left */
+  align-items: flex-start;
+}
+
+.card img {
+  /* height: 20vw; */
+  /* max-width: 100%; */
+  width: 30vw;
+  max-height: 100%;
+}
+
+.cardInfo > * {
+  margin-top: 0.5rem;
+}
+
+.cardButton {
+  /* margin auto to make the button be in the middle */
+  margin: auto;
+  margin-top: 0.5rem;
+  width: 50%;
+  text-align: center;
+}

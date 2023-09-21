@@ -1,6 +1,6 @@
 import { v4 as uuid } from "uuid";
 
-export let carData = [
+let carDataArray = [
   {
     id: uuid(),
     make: "BMW",
@@ -8,7 +8,7 @@ export let carData = [
     year: 1998,
     price: 3000,
     disc: "A lovely BMW 528i Touring which makes would make a great cruiser for travelling",
-    img: "../../assets/images/cars/bmw528i.jpg",
+    img: "src/assets/images/cars/bmw528i.jpg",
   },
   {
     id: uuid(),
@@ -17,7 +17,7 @@ export let carData = [
     year: 2017,
     price: 12000,
     disc: "Future classic hot hatch",
-    img: "../../assets/images/cars/fiestast.jpg",
+    img: "src/assets/images/cars/fiestast.jpg",
   },
   {
     id: uuid(),
@@ -26,7 +26,7 @@ export let carData = [
     year: "1998",
     price: 4500,
     disc: "A lesser known super saloon from the 90s",
-    img: "../../assets/images/cars/jaguarxjr.webp",
+    img: "src/assets/images/cars/jaguarxjr.webp",
   },
   {
     id: uuid(),
@@ -35,6 +35,8 @@ export let carData = [
     year: 1997,
     price: 4250,
     disc: "Homologation for Volvo's entry to the 1994 BTCC",
-    img: "../../assets/images/cars/volvo850r.jpg",
+    img: "src/assets/images/cars/volvo850r.jpeg",
   },
 ];
+
+export { carDataArray };

@@ -9,6 +9,7 @@ const VehicleCard = ({ id, make, model, year, price, disc, img }) => {
         <p>£{price}</p>
         <p>{disc}</p>
       </div>
+      <button className="cardButton">Add to Cart</button>
     </div>
   );
 };
