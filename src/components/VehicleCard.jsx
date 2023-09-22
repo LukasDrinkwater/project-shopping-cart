@@ -9,7 +9,15 @@ const VehicleCard = ({ id, make, model, year, price, disc, img }) => {
         <p>£{price}</p>
         <p>{disc}</p>
       </div>
-      <button className="cardButton">Add to Cart</button>
+      <div className="cardButtonContainer">
+        <button className="cardButton">-</button>
+        <input placeholder="0">
+          {
+            // length of the card array
+          }
+        </input>
+        <button className="cardButton">+</button>
+      </div>
     </div>
   );
 };

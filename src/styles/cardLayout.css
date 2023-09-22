@@ -19,10 +19,18 @@
   margin-top: 0.5rem;
 }
 
+.cardButtonContainer {
+  display: flex;
+  justify-content: center;
+}
 .cardButton {
-  /* margin auto to make the button be in the middle */
-  margin: auto;
-  margin-top: 0.5rem;
-  width: 50%;
+  width: 2rem;
+}
+
+.cardButtonContainer input {
+  max-width: 2rem;
+  /* height: 100%; */
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
   text-align: center;
 }
