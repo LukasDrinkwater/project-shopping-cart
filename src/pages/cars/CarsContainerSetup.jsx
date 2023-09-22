@@ -1,5 +1,8 @@
 import { VehicleCard } from "../../components/VehicleCard";
 
+// import styles
+import "../../styles/carAndBikePage.css";
+
 const CarsContainerSetup = ({ carData }) => {
   // id, make, model, year, price, disc, img
   return (

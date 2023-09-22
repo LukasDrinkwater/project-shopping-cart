@@ -12,17 +12,21 @@ import {
 // Layouts
 import { RootLayout } from "./pageLayouts/RootLayout";
 import { CarsLayout } from "./pageLayouts/CarsLayout";
+import { CartLayout } from "./pageLayouts/CartLayout";
 
 // states variable imports
 import { carDataArray } from "./pages/cars/carData";
 
 const App = () => {
   const [carData, setCarData] = useState(carDataArray);
+  // const [BikeData, setBikeData] = useState(BikeDataArray);
 
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<RootLayout />}>
         <Route path="cars" element={<CarsLayout carData={carData} />}></Route>
+        {/* <Route path="bikes" element={<BikesLayout bikeData={bikeData} />} /> */}
+        <Route path="cart" element={<CartLayout />} />
       </Route>
     )
   );
