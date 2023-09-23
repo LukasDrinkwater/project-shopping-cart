@@ -19,12 +19,36 @@ import { carDataArray } from "./pages/cars/carData";
 
 const App = () => {
   const [carData, setCarData] = useState(carDataArray);
-  // const [BikeData, setBikeData] = useState(BikeDataArray);
+
+  const handleCountAddOrSub = (id, addOrSub) => {
+    const updatedCars = [...carData];
+    const index = updatedCars.findIndex((vehicle) => vehicle.id === id);
+
+    if (updatedCars[index].count - 1 > updatedCars[index].count) return;
+
+    if (addOrSub === "add") {
+      updatedCars[index].count + 1;
+    } else {
+      updatedCars[index].count - 1;
+    }
+
+    setCarData(updatedCars);
+
+    // setCartCount((cartCount) => cartCount - 1);
+  };
 
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<RootLayout />}>
-        <Route path="cars" element={<CarsLayout carData={carData} />}></Route>
+        <Route
+          path="cars"
+          element={
+            <CarsLayout
+              carData={carData}
+              handleCountAddOrSub={handleCountAddOrSub}
+            />
+          }
+        ></Route>
         {/* <Route path="bikes" element={<BikesLayout bikeData={bikeData} />} /> */}
         <Route path="cart" element={<CartLayout />} />
       </Route>

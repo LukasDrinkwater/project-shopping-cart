@@ -9,6 +9,7 @@ let bikes = [
     price: 
     disc: "",
     img:
+    count: 0
   },
   {
     id: uuid(),
@@ -18,6 +19,7 @@ let bikes = [
     price: 
     disc: "",
     img:
+    count: 0
 
   },
   {
@@ -28,6 +30,7 @@ let bikes = [
     price: 
     disc: "",
     img:
+    count: 0
 
   },
   {
@@ -38,6 +41,7 @@ let bikes = [
     price: 
     disc: "",
     img:
+    count: 0
 
   },
 ];
