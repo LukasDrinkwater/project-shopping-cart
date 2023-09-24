@@ -1,11 +1,13 @@
+import { CartContainerSetup } from "../pages/cart/CartContainerSetup";
+
 // need to display the number of items in the cart.
 
-const CartLayout = () => {
+const CartLayout = ({ carData }) => {
   return (
     <div>
       <p>This is the cart layout</p>
 
-      {/* component that has checkout and clear cart. */}
+      <CartContainerSetup carData={carData} />
     </div>
   );
 };

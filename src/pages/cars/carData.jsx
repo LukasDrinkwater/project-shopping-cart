@@ -9,7 +9,7 @@ let carDataArray = [
     price: 25,
     disc: "A lovely BMW 528i Touring which makes would make a great cruiser for travelling",
     img: "src/assets/images/cars/bmw528i.jpg",
-    count: 0,
+    count: null,
     type: "car",
   },
   {
@@ -20,7 +20,7 @@ let carDataArray = [
     price: 20,
     disc: "Future classic hot hatch",
     img: "src/assets/images/cars/fiestast.jpg",
-    count: 0,
+    count: null,
     type: "car",
   },
   {
@@ -31,7 +31,7 @@ let carDataArray = [
     price: 30,
     disc: "A lesser known super saloon from the 90s",
     img: "src/assets/images/cars/jaguarxjr.webp",
-    count: 0,
+    count: null,
     type: "car",
   },
   {
@@ -42,7 +42,7 @@ let carDataArray = [
     price: 30,
     disc: "Homologation for Volvo's entry to the 1994 BTCC",
     img: "src/assets/images/cars/volvo850r.jpeg",
-    count: 0,
+    count: null,
     type: "car",
   },
   {
@@ -53,7 +53,7 @@ let carDataArray = [
     price: "",
     disc: "",
     img: "",
-    count: 0,
+    count: null,
     type: "bike",
   },
   {
@@ -64,7 +64,7 @@ let carDataArray = [
     price: "",
     disc: "",
     img: "",
-    count: 0,
+    count: null,
     type: "bike",
   },
   {
@@ -75,7 +75,7 @@ let carDataArray = [
     price: "",
     disc: "",
     img: "",
-    count: 0,
+    count: null,
     type: "bike",
   },
   {
@@ -86,7 +86,7 @@ let carDataArray = [
     price: "",
     disc: "",
     img: "",
-    count: 0,
+    count: null,
     type: "bike",
   },
 ];

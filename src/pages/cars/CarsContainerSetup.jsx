@@ -3,7 +3,7 @@ import { VehicleCard } from "../../components/VehicleCard";
 // import styles
 import "../../styles/carAndBikePage.css";
 
-const CarsContainerSetup = ({ carData, handleCountAddOrSub }) => {
+const CarsContainerSetup = ({ carData, handleCountChange }) => {
   // id, make, model, year, price, disc, img
   return (
     <>
@@ -12,16 +12,9 @@ const CarsContainerSetup = ({ carData, handleCountAddOrSub }) => {
         {/* something to make each car card */}
         {carData.map((car) => (
           <VehicleCard
+            car={car}
             key={car.id}
-            id={car.id}
-            make={car.make}
-            model={car.model}
-            year={car.year}
-            price={car.price}
-            disc={car.disc}
-            img={car.img}
-            count={car.count}
-            handleCountAddOrSub={handleCountAddOrSub}
+            handleCountChange={handleCountChange}
           />
         ))}
       </div>

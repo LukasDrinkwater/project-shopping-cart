@@ -1,20 +1,14 @@
-const VehicleCard = ({
-  id,
-  make,
-  model,
-  year,
-  price,
-  disc,
-  img,
-  count,
-  handleCountAddOrSub,
-}) => {
+const VehicleCard = ({ car, handleCountChange }) => {
   // bring in the relavant info
 
-  const handleInputChange = () => (id) => {
-    const updatedCars = [...carData];
-    const index = updatedCars.findIndex((vehicle) => vehicle.id === id);
-  };
+  const id = car.id;
+  const make = car.make;
+  const model = car.model;
+  const year = car.year;
+  const price = car.price;
+  const disc = car.disc;
+  const img = car.img;
+  const count = car.count;
 
   return (
     <div className="card" data-id={id}>
@@ -29,15 +23,17 @@ const VehicleCard = ({
           className="cardButton"
           data-addorsub="sub"
           onClick={(event) =>
-            handleCountAddOrSub(id, event.target.dataset.addorsub)
+            handleCountChange(id, event.target.dataset.addorsub)
           }
         >
           -
         </button>
         <input
           placeholder="0"
-          // value={count}
-          onChange={() => handleInputChange(id)}
+          value={count !== null ? count : ""}
+          onChange={(event) =>
+            handleCountChange(id, "input", event.target.value)
+          }
         >
           {
             // length of the card array
@@ -47,7 +43,7 @@ const VehicleCard = ({
           className="cardButton"
           data-addorsub="add"
           onClick={(event) =>
-            handleCountAddOrSub(id, event.target.dataset.addorsub)
+            handleCountChange(id, event.target.dataset.addorsub)
           }
         >
           +

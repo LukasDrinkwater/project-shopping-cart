@@ -20,16 +20,25 @@ import { carDataArray } from "./pages/cars/carData";
 const App = () => {
   const [carData, setCarData] = useState(carDataArray);
 
-  const handleCountAddOrSub = (id, addOrSub) => {
+  const handleCountChange = (id, action, value) => {
+    let regex = /^[A-Za-z]+$/;
+
     const updatedCars = [...carData];
     const index = updatedCars.findIndex((vehicle) => vehicle.id === id);
 
-    if (updatedCars[index].count - 1 > updatedCars[index].count) return;
+    if (value != undefined) {
+      if (value.match(regex)) return;
+    }
 
-    if (addOrSub === "add") {
-      updatedCars[index].count + 1;
-    } else {
-      updatedCars[index].count - 1;
+    // if (updatedCars[index].count - 1 < 0) return;
+
+    console.log(updatedCars[index]);
+    if (action === "add") {
+      updatedCars[index].count++;
+    } else if (action === "sub") {
+      updatedCars[index].count--;
+    } else if (action === "input") {
+      updatedCars[index].count = value;
     }
 
     setCarData(updatedCars);
@@ -45,12 +54,12 @@ const App = () => {
           element={
             <CarsLayout
               carData={carData}
-              handleCountAddOrSub={handleCountAddOrSub}
+              handleCountChange={handleCountChange}
             />
           }
         ></Route>
         {/* <Route path="bikes" element={<BikesLayout bikeData={bikeData} />} /> */}
-        <Route path="cart" element={<CartLayout />} />
+        <Route path="cart" element={<CartLayout carData={carData} />} />
       </Route>
     )
   );
