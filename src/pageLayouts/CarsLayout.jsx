@@ -1,4 +1,5 @@
 import { CarsContainerSetup } from "../pages/cars/CarsContainerSetup";
+import "../styles/carAndBikePage.css";
 
 // styles
 import "../styles/cardLayout.css";

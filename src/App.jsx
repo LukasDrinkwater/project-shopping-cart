@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { v4 as uuid } from "uuid";
 import "./App.css";
 import "../src/styles/reset.css";
 import {
@@ -30,25 +29,21 @@ const App = () => {
       if (value.match(regex)) return;
     }
 
-    // if (updatedCars[index].count - 1 < 0) return;
-
     console.log(updatedCars[index]);
     if (action === "add") {
       updatedCars[index].count++;
     } else if (action === "sub") {
       updatedCars[index].count--;
     } else if (action === "input") {
-      updatedCars[index].count = value;
+      updatedCars[index].count = parseInt(value);
     }
-
+    console.log(value);
     setCarData(updatedCars);
-
-    // setCartCount((cartCount) => cartCount - 1);
   };
 
   const router = createBrowserRouter(
     createRoutesFromElements(
-      <Route path="/" element={<RootLayout />}>
+      <Route path="/" element={<RootLayout carData={carData} />}>
         <Route
           path="cars"
           element={
@@ -59,7 +54,15 @@ const App = () => {
           }
         ></Route>
         {/* <Route path="bikes" element={<BikesLayout bikeData={bikeData} />} /> */}
-        <Route path="cart" element={<CartLayout carData={carData} />} />
+        <Route
+          path="cart"
+          element={
+            <CartLayout
+              carData={carData}
+              handleCountChange={handleCountChange}
+            />
+          }
+        />
       </Route>
     )
   );
@@ -68,12 +71,3 @@ const App = () => {
 };
 
 export default App;
-
-// <Route index element={<Home />} />
-//       <Route path="about" element={<About />} />
-//       <Route path="help" element={<HelpLayout />}>
-//         <Route path="faq" element={<Faq />} />
-//         <Route path="contact" element={<Contact />} />
-//       </Route>
-//       {/* if the url path is wrong at all it renders the NotFound component */}
-//       <Route path="*" element={<NotFound />} />

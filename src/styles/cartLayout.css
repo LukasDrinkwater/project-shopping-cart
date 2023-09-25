@@ -1,0 +1,13 @@
+/* cart container */
+.cartContainer {
+  display: flex;
+}
+
+/* cart card */
+.cartCard {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+}
+
+/* total price */

@@ -1,5 +1,6 @@
-const CartCard = ({ car }) => {
-  const img = car.img;
+import { CardButtons } from "./CardButtons";
+
+const CartCard = ({ car, handleCountChange }) => {
   const price = car.price;
   const count = car.count;
   const make = car.make;
@@ -7,10 +8,10 @@ const CartCard = ({ car }) => {
 
   return (
     <div className="cartCard">
-      <img src={img} />
-      <p>{`${make} ${model}`}</p>
-      <p>{count}</p>
-      <p>{count * price}</p>
+      <h2>{`${make} ${model}`}</h2>
+      <p>Quantity: {count}</p>
+      <CardButtons car={car} handleCountChange={handleCountChange} />
+      <p>£{count * price}</p>
     </div>
   );
 };
