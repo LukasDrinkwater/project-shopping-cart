@@ -1,0 +1,44 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`App component > renders magnificent monkeys 1`] = `
+<div>
+  <div
+    class="root-layout"
+  >
+    <header>
+      <nav>
+        <h1>
+          Car and Bike Models
+        </h1>
+        <a
+          aria-current="page"
+          class="active"
+          href="/"
+        >
+          Home
+        </a>
+        <a
+          class=""
+          href="/cars"
+        >
+          Cars
+        </a>
+        <a
+          class=""
+          href="/bikes"
+        >
+          Bikes
+        </a>
+        <a
+          class=""
+          href="/cart"
+        >
+          Cart: 
+          0
+        </a>
+      </nav>
+    </header>
+    <main />
+  </div>
+</div>
+`;
