@@ -5,21 +5,62 @@ import { VehicleCard } from "./VehicleCard";
 import { App } from "../App";
 
 describe("Vehicle card tests", () => {
+  const car = {
+    id: 1,
+    make: "make",
+    model: "model",
+    year: 1998,
+    price: 25,
+    disc: "discription",
+    img: "img",
+    count: null,
+    type: "car",
+  };
+
+  it("check it renders the card info", () => {
+    render(<VehicleCard car={car} />);
+    const make = screen.getByText(/make/);
+    const model = screen.getByText(/model/);
+    const year = screen.getByText(/1998/);
+    const price = screen.getByText(/25/);
+    const disc = screen.getByText(/discription/);
+  });
+
   it("adds 1 to the count of the vehicle", () => {
     const car = {
       id: 1,
-      make: "BMW",
-      model: "528i Touring",
+      make: "make",
+      model: "model",
       year: 1998,
       price: 25,
-      disc: "A lovely BMW 528i Touring which makes would make a great cruiser for travelling",
-      img: "src/assets/images/cars/bmw528i.jpg",
+      disc: "discription",
+      img: "img",
       count: null,
       type: "car",
     };
     render(<VehicleCard car={car} />);
-    const addButton = screen.getByText();
+    // const addButton = screen.getByText(/-/);
+    const countFieldPlaceholder = screen.getByPlaceholderText("0");
+    const countField = screen.getByRole("textbox");
+    // expect(countField.value).toBe("0");
   });
+});
+
+it("check if input shows current count of vehicle", () => {
+  const car = {
+    id: 1,
+    make: "make",
+    model: "model",
+    year: 1998,
+    price: 25,
+    disc: "discription",
+    img: "img",
+    count: 1,
+    type: "car",
+  };
+  render(<VehicleCard car={car} />);
+  const countField = screen.getByRole("textbox");
+  expect(countField.value).toBe("1");
 });
 
 // describe("App component", () => {
