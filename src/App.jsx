@@ -13,6 +13,9 @@ import { RootLayout } from "./pageLayouts/RootLayout";
 import { CarsLayout } from "./pageLayouts/CarsLayout";
 import { CartLayout } from "./pageLayouts/CartLayout";
 
+// Pages
+import NotFound from "./pages/NotFound";
+
 // states variable imports
 import { carDataArray } from "./pages/cars/carData";
 
@@ -63,6 +66,7 @@ const App = () => {
             />
           }
         />
+        <Route path="*" element={<NotFound />} />
       </Route>
     )
   );
