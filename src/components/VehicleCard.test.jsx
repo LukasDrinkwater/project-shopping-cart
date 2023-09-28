@@ -1,5 +1,5 @@
-import { describe, it, expect } from "vitest";
-import { render, screen } from "@testing-library/react";
+import { describe, it, expect, vi } from "vitest";
+import { render, screen, fireEvent } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { VehicleCard } from "./VehicleCard";
 import { App } from "../App";
@@ -58,5 +58,20 @@ describe("Vehicle card tests", () => {
     render(<VehicleCard car={car} />);
     const countField = screen.getByRole("textbox");
     expect(countField.value).toBe("1");
+  });
+
+  const mockHandleCountChange = vi.fn();
+
+  it("check if count increments when + is clicked", () => {
+    render(<VehicleCard car={car} handleCountChange={mockHandleCountChange} />);
+
+    const countField = screen.getAllByPlaceholderText("0");
+    const addButton = screen.getByText("+");
+
+    fireEvent.click(addButton);
+
+    expect(car.count).toBe("1");
+
+    // expect(countField.value).toBe("1");
   });
 });
